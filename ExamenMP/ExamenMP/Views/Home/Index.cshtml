@@ -1,31 +1,77 @@
-﻿<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
-            a broad range of clients, including browsers and mobile devices. ASP.NET Web API
-            is an ideal platform for building RESTful applications on the .NET Framework.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301871">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
-    </div>
-    <form action="/procesar-pago" method="POST">
-        <script src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
-                data-preference-id="@ViewBag.id">
-        </script>
-    </form>
-</div>
+﻿
+@{
+    ViewBag.Title = "ian";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="row">
+
+                <form action="@Url.Action("Checkout", "Backoffice")" method="get">
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img name="image" class="card-img-top" style="height: 300px" src="https://i.ebayimg.com/images/i/382394089410-0-1/s-l1000.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Iphone x</h5>
+                                <p class="card-text">1000</p>
+                                <input name="prodName" hidden value="Iphone X" />
+                                <input name="price" hidden value="1000" />
+                                <input name="image" hidden value="https://i.ebayimg.com/images/i/382394089410-0-1/s-l1000.jpg" />
+
+                                <button class="btn btn-primary">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <form action="@Url.Action("Checkout", "Backoffice")" method="post">
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img name="image" class="card-img-top" style="height: 300px" src="https://cdn.dxomark.com/wp-content/uploads/medias/post-26617/SamsungGalaxyS10.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 name="prodName" class="card-title">Samsung S10</h5>
+                                <p name="price" class="card-text">1100</p>
+                                <input name="prodName" hidden value="Samsung S10 X" />
+                                <input name="price" hidden value="1100" />
+                                <input name="image" hidden value="https://cdn.dxomark.com/wp-content/uploads/medias/post-26617/SamsungGalaxyS10.jpg" />
+                                <button class="btn btn-primary">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <form action="@Url.Action("Checkout", "Backoffice")" method="post">
+                    <div class="col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img name="image" class="card-img-top" style="height: 300px" src="https://liliputing.com/wp-content/uploads/2020/05/poco-f2-pro.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 name="prodName" class="card-title">Xiaomi</h5>
+                                <p name="price" class="card-text">900</p>
+
+                                <input name="prodName" hidden value="Xiaomi Poco F2 pro" />
+                                <input name="price" hidden value="1200" />
+                                <input name="image" hidden value="https://liliputing.com/wp-content/uploads/2020/05/poco-f2-pro.jpg" />
+                                <button class="btn btn-primary">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+
+
